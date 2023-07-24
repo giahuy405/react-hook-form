@@ -1,5 +1,3 @@
-import { error } from 'console'
-import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { rules } from './utils/rules'
 
@@ -52,7 +50,7 @@ function App() {
             type="password"
             className="flex items-center h-12 px-4 mt-2 rounded border"
             placeholder='Xác thực mật khẩu'
-            {...register('confirmPassword', {...rules.confirmPassword,validate:value=>value===getValues('password') || 'Xác thực mật khẩu không giống' })}
+            {...register('confirmPassword', { ...rules.confirmPassword, validate: value => value === getValues('password') || 'Xác thực mật khẩu không giống' })}
           />
           <div className="text-red-500 text-left min-h-[22px]">{errors.confirmPassword?.message}</div>
 
